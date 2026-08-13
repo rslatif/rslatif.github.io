@@ -22,7 +22,7 @@ export function ContactForm(){
    setLastSent(timestamp()); form.reset(); setNotice({ok:true,text:"Your email app has been opened with the message ready to send."}); return;
   }
   setNotice(null);
-  try{await emailjs.send(service,template,{...values,to_name:import.meta.env.VITE_CONTACT_RECEIVER_NAME || "MD. Abdul Lotif",to_email:contact.email,reply_to:values.from_email,page_url:location.href,submission_time:isoTimestamp()},key);setLastSent(timestamp());form.reset();setNotice({ok:true,text:"Thanks. Your message was sent successfully."})}
+  try{await emailjs.send(service,template,{...values,to_name:import.meta.env.VITE_CONTACT_RECEIVER_NAME || "MD. Abdul Lotif",to_email:contact.email,reply_to:values.from_email,visitor_email:values.from_email,user_email:values.from_email,page_url:location.href,submission_time:isoTimestamp()},key);setLastSent(timestamp());form.reset();setNotice({ok:true,text:"Thanks. Your message was sent successfully."})}
   catch(error){const detail=typeof error==="object"&&error!==null&&"text" in error?String(error.text):"Please confirm the EmailJS service, template, and allowed domain settings.";setNotice({ok:false,text:`EmailJS could not send the message: ${detail}`})}
  }
  const field="h-11 w-full rounded-xl border bg-background px-3 text-sm";

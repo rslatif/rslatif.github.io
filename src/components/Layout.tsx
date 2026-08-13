@@ -4,6 +4,7 @@ import { ArrowUp, Github, Mail, Menu, MessageCircle, Moon, Search, ShieldCheck, 
 import { navigation } from "@/data/navigation";
 import { contact } from "@/data/contact";
 import { siteSettings } from "@/data/siteSettings";
+import { profile } from "@/data/profile";
 
 export function Layout() {
   const [menu, setMenu] = useState(false);
@@ -30,7 +31,7 @@ export function Layout() {
     <div className="no-print fixed left-0 top-0 z-[70] h-1 bg-brand" style={{ width: `${progress}%` }} aria-hidden />
     <header className="no-print sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
       <div className="container-shell flex h-18 items-center justify-between">
-        <NavLink to="/" className="flex items-center gap-3 font-semibold"><span className="grid size-9 place-items-center rounded-xl bg-brand text-white"><ShieldCheck size={20}/></span>Abdul Lotif<span className="text-brand">.</span></NavLink>
+        <NavLink to="/" className="flex items-center gap-3 font-semibold"><span className="grid size-9 place-items-center overflow-hidden rounded-xl bg-brand text-white">{profile.profilePhoto?<img src={profile.profilePhoto} alt="MD Abdul Lotif" className="size-full object-cover"/>:<ShieldCheck size={20}/>}</span><span className="text-sm tracking-wide sm:text-base">MD ABDUL LOTIF</span><span className="text-brand">.</span></NavLink>
         <nav className="hidden items-center gap-4 text-sm text-muted xl:flex" aria-label="Primary">{navigation.map(([label,path])=><NavLink key={path} to={path} className={({isActive})=>`py-2 transition hover:text-brand ${isActive?"text-brand":" "}`}>{label}</NavLink>)}<NavLink to="/search" aria-label="Search"><Search size={17}/></NavLink></nav>
         <div className="flex gap-2"><button className="grid size-10 place-items-center rounded-full border bg-surface" onClick={()=>setDark(!dark)} aria-label={`Switch to ${dark?"light":"dark"} theme`}>{dark?<Sun size={17}/>:<Moon size={17}/>}</button><button className="grid size-10 place-items-center rounded-full border bg-surface xl:hidden" onClick={()=>setMenu(!menu)} aria-expanded={menu} aria-label="Toggle menu">{menu?<X size={18}/>:<Menu size={18}/>}</button></div>
       </div>
