@@ -12,14 +12,17 @@ export function ContactForm(){
  const form=useForm<ContactFormValues>({resolver:zodResolver(contactSchema),defaultValues:{from_name:"",from_email:"",company:"",subject:"",enquiry_type:"General enquiry",message:"",consent:false as true,website:""}});
  async function submit(values:ContactFormValues){
   if(values.website)return; if(lastSent&&timestamp()-lastSent<60_000){setNotice({ok:false,text:"Please wait before sending another message."});return}
-  const service=import.meta.env.VITE_EMAILJS_SERVICE_ID; const template=import.meta.env.VITE_EMAILJS_TEMPLATE_ID; const key=import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  // EmailJS browser keys are intentionally public; environment values can override these defaults during CI deployment.
+  const service=import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_j7bc0lh";
+  const template=import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_93f8066";
+  const key=import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "ObEJVgZMWC8qRdndo";
   if(!service||!template||!key){
    const body=`Name: ${values.from_name}\nEmail: ${values.from_email}\nCompany: ${values.company || "Not provided"}\nEnquiry: ${values.enquiry_type}\n\n${values.message}`;
    window.open(`mailto:${contact.email}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(body)}`, "_self");
    setLastSent(timestamp()); form.reset(); setNotice({ok:true,text:"Your email app has been opened with the message ready to send."}); return;
   }
   setNotice(null);
-  try{await emailjs.send(service,template,{...values,to_name:import.meta.env.VITE_CONTACT_RECEIVER_NAME,page_url:location.href,submission_time:isoTimestamp()},key);setLastSent(timestamp());form.reset();setNotice({ok:true,text:"Thanks. Your message was sent successfully."})}
+  try{await emailjs.send(service,template,{...values,to_name:import.meta.env.VITE_CONTACT_RECEIVER_NAME || "MD. Abdul Lotif",to_email:contact.email,page_url:location.href,submission_time:isoTimestamp()},key);setLastSent(timestamp());form.reset();setNotice({ok:true,text:"Thanks. Your message was sent successfully."})}
   catch{setNotice({ok:false,text:"The message could not be sent. Please try again later."})}
  }
  const field="h-11 w-full rounded-xl border bg-background px-3 text-sm";
