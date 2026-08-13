@@ -19,7 +19,7 @@ export default function Home() {
    <div className="container-shell relative grid min-h-[calc(100vh-4.5rem)] items-center gap-12 py-20 lg:grid-cols-[1.15fr_.85fr]">
     <div>
      <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} className="signal-pill"><span/>SYSTEM ONLINE · {profile.availability}</motion.div>
-     <p className="eyebrow mt-7">IT / NETWORKING / CYBERSECURITY</p>
+     <motion.div initial={{opacity:0,x:-12}} animate={{opacity:1,x:0}} transition={{delay:.12}} className="hero-profile-identity">{profile.profilePhoto?<img src={profile.profilePhoto} alt={`Portrait of ${profile.fullName}`} />:<ShieldCheck size={64}/>}<div><p className="eyebrow">IT / NETWORKING / CYBERSECURITY</p><h2>MD ABDUL LOTIF</h2><p>IT Support · Networking · Cybersecurity</p></div></motion.div>
      <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[.94] tracking-[-.065em] sm:text-7xl lg:text-8xl">Secure the<br/><span className="cyber-gradient">connection.</span></h1>
      <p className="mt-7 max-w-xl text-lg leading-8 text-muted">I’m <strong className="text-foreground">{profile.fullName}</strong> — an IT & cybersecurity professional building dependable systems and learning security from the network outward.</p>
      <div className="mt-9 flex flex-wrap gap-3"><Link to="/projects" className="cyber-button">Explore my work <ArrowUpRight size={18}/></Link><Link to="/contact" className="cyber-button-secondary">Let’s connect</Link></div>
@@ -30,7 +30,6 @@ export default function Home() {
       <div className="orbit-node node-a"/><div className="orbit-node node-b"/><div className="orbit-node node-c"/>
       <div className="core-node"><ShieldCheck size={44}/><span className="core-label">SECURE<br/>BY DESIGN</span></div>
       <div className="data-chip chip-a"><Terminal size={15}/> ROUTEROS</div><div className="data-chip chip-b"><Binary size={15}/> 0101</div>
-      <motion.div initial={{opacity:0,x:22,y:12}} animate={{opacity:1,x:0,y:0}} transition={{delay:.4}} className="hero-profile-card"><div className="hero-profile-image">{profile.profilePhoto?<img src={profile.profilePhoto} alt={`Portrait of ${profile.fullName}`}/>:<ShieldCheck size={46}/>}</div><div><p className="text-[10px] font-bold tracking-[.16em] text-brand">IT / CYBERSECURITY</p><p className="mt-1 text-sm font-semibold text-white">MD ABDUL LOTIF</p><p className="mt-1 text-xs text-slate-300">Building secure systems</p></div><span className="hero-profile-dot"/></motion.div>
     </motion.div>
    </div>
   </section>
