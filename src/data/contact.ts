@@ -8,7 +8,7 @@ export const contact = {
   linkedinUrl: "https://www.linkedin.com/in/rslotif",
   instagramUrl: "https://www.instagram.com/rslotif128",
   discordUrl: "https://discord.com/users/1018092870412025937",
-  githubUrl: "https://github.com/rslotif",
+  githubUrl: "https://github.com/rslatif",
   telegramUsername: "",
   location: "Bangladesh",
   availability: "Open to IT, networking, and cybersecurity opportunities",
