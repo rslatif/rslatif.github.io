@@ -14,7 +14,7 @@ export function ContactForm(){
   if(values.website)return; if(lastSent&&timestamp()-lastSent<60_000){setNotice({ok:false,text:"Please wait before sending another message."});return}
   // EmailJS browser keys are intentionally public; environment values can override these defaults during CI deployment.
   const service=import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_j7bc0lh";
-  const template=import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_93f8066";
+  const template=import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_6ohkq4d";
   const key=import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "ObEJVgZMWC8qRdndo";
   if(!service||!template||!key){
    const body=`Name: ${values.from_name}\nEmail: ${values.from_email}\nCompany: ${values.company || "Not provided"}\nEnquiry: ${values.enquiry_type}\n\n${values.message}`;
