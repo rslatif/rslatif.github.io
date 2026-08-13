@@ -15,7 +15,7 @@ export function ContactForm(){
   const service=import.meta.env.VITE_EMAILJS_SERVICE_ID; const template=import.meta.env.VITE_EMAILJS_TEMPLATE_ID; const key=import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   if(!service||!template||!key){
    const body=`Name: ${values.from_name}\nEmail: ${values.from_email}\nCompany: ${values.company || "Not provided"}\nEnquiry: ${values.enquiry_type}\n\n${values.message}`;
-   window.location.href=`mailto:${contact.email}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(body)}`;
+   window.open(`mailto:${contact.email}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(body)}`, "_self");
    setLastSent(timestamp()); form.reset(); setNotice({ok:true,text:"Your email app has been opened with the message ready to send."}); return;
   }
   setNotice(null);
