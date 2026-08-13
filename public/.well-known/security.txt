@@ -1,0 +1,4 @@
+Contact: https://rslotif.github.io/#/responsible-disclosure
+Policy: https://rslotif.github.io/#/responsible-disclosure
+Preferred-Languages: en, bn
+Canonical: https://rslotif.github.io/.well-known/security.txt

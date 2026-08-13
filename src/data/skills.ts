@@ -1,0 +1,10 @@
+import type { Skill } from "@/types/content";
+export const skills: Skill[] = [
+  { id: "mikrotik", name: "MikroTik RouterOS", category: "Networking", level: "Intermediate", description: "Home-lab practice with RouterOS configuration, routing concepts, firewall rules, NAT, DHCP, and network troubleshooting.", featured: true, published: true, order: 1 },
+  { id: "networking", name: "Network Fundamentals", category: "Networking", level: "Intermediate", description: "IP addressing, subnetting, LAN setup, DNS, DHCP, NAT, routing and practical connectivity troubleshooting.", featured: true, published: true, order: 2 },
+  { id: "linux", name: "Linux & Windows Support", category: "System Administration", level: "Intermediate", description: "Everyday system setup, command-line work, software troubleshooting, user support, and documentation.", featured: true, published: true, order: 3 },
+  { id: "web-security", name: "Web Application Security", category: "Web Application Security", level: "Intermediate", description: "Security-focused learning around common web risks, responsible testing, vulnerability analysis, and clear reporting.", featured: true, published: true, order: 4 },
+  { id: "virtualisation", name: "Virtualisation & Home Lab", category: "Virtualisation", level: "Intermediate", description: "Building isolated virtual environments to practise systems, networking, and cybersecurity safely.", featured: false, published: true, order: 5 },
+  { id: "web-dev", name: "Web Development", category: "Web Development", level: "Intermediate", description: "Creating responsive, accessible websites with modern frontend tools and a security-aware mindset.", featured: false, published: true, order: 6 }
+];
+export const skillCategories = ["Cybersecurity", "Web Application Security", "Vulnerability Assessment", "Penetration Testing", "IT Support", "System Administration", "Networking", "Windows", "Linux", "Virtualisation", "Cloud and Deployment", "Programming", "Web Development", "Databases", "Security Tools", "Research Tools", "Reporting and Documentation", "Soft Skills"];

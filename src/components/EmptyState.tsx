@@ -1,0 +1,2 @@
+export function EmptyState({label}:{label:string}){return <div className="card col-span-full p-10 text-center"><ShieldCheckIcon/><h2 className="mt-4 font-semibold">No published {label} yet</h2><p className="mx-auto mt-2 max-w-lg text-sm leading-6 text-muted">This section is ready for genuine, verified content. Edit the matching file in src/data and set published to true.</p></div>}
+function ShieldCheckIcon(){return <div className="mx-auto grid size-11 place-items-center rounded-xl bg-brand/10 text-brand">✓</div>}

@@ -1,0 +1,21 @@
+export const profile = {
+  fullName: "MD. Abdul Lotif",
+  professionalTitle: "IT & Cybersecurity Professional",
+  headline: "IT & Cybersecurity Professional Building Secure and Reliable Digital Systems",
+  valueStatement: "Focused on IT support, system administration, cybersecurity, web application security, vulnerability assessment, security research, networking, and full-stack development.",
+  location: "Bangladesh",
+  university: "Uttara University",
+  availability: "Open to opportunities",
+  preferredJobType: "IT, networking & cybersecurity roles",
+  preferredWorkMode: "On-site, hybrid or remote",
+  profilePhoto: "",
+  resumeUrl: "/documents/cv.pdf",
+  roles: ["IT Support Professional", "Cybersecurity Professional", "Web Security Researcher", "System Administration Practitioner", "Vulnerability Assessment Practitioner", "Full-Stack Developer"],
+  summary: "I am an IT and cybersecurity practitioner with hands-on interest in networking, systems support, web security, and practical home-lab learning. I enjoy turning complex technical problems into reliable, documented solutions.",
+  careerObjective: "To grow in an IT, networking, or cybersecurity role where I can build secure systems, learn continuously, and contribute with discipline and curiosity.",
+  introduction: "My work blends foundational IT support with an active interest in cybersecurity and network administration. I learn by building, testing, documenting, and improving real lab environments.",
+  currentFocus: "Strengthening MikroTik networking skills, web-application security practice, Linux administration, and security research workflows.",
+  interests: ["IT support", "Cybersecurity", "MikroTik networking", "Web application security", "Security research"],
+  values: ["Accuracy", "Responsible practice", "Continuous learning", "Clear documentation"],
+  languages: ["Bangla", "English"]
+} as const;
