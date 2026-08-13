@@ -25,3 +25,4 @@ a{color:inherit;text-decoration:none} button,input,textarea,select{font:inherit}
 .skip-link{position:fixed;left:1rem;top:-5rem;z-index:100;background:var(--brand);color:#fff;padding:.7rem 1rem;border-radius:.6rem}.skip-link:focus{top:1rem}
 @media(max-width:767px){body{padding-bottom:4.5rem}} @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media print{.no-print{display:none!important}body{background:#fff;color:#111;padding:0}.card{box-shadow:none;break-inside:avoid}@page{size:A4;margin:14mm}}
+.core-node{overflow:visible}.core-node img{position:absolute;inset:0}.core-label{position:absolute;bottom:-2.8rem;width:8rem;font-size:.54rem!important;font-weight:800;letter-spacing:.12em;line-height:1.4;text-shadow:0 1px 8px #06111c}

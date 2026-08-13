@@ -1,4 +1,4 @@
 import type { Certification } from "@/types/content";
 export const certifications: Certification[] = [
-  { id: "certificate-placeholder", title: "Add a genuine certificate", organisation: "Issuing organisation", category: "Training", doesNotExpire: true, skills: [], description: "Add the official verification URL and verified certificate details.", featured: false, published: false, order: 1 }
+  { id: "arena-web-security", title: "Cyber Security & Ethical Hacking", organisation: "Arena Web Security", category: "Training", doesNotExpire: true, credentialId: "A59W0505S073", skills: ["Ethical hacking", "Web security", "Vulnerability assessment"], description: "Cybersecurity and ethical hacking training. Certificate verification ID: A59W0505S073.", featured: true, published: true, order: 1 }
 ];

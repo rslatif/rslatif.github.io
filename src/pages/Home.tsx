@@ -28,7 +28,7 @@ export default function Home() {
     <motion.div initial={{opacity:0,scale:.94}} animate={{opacity:1,scale:1}} transition={{delay:.15}} className="network-orbit mx-auto" aria-label="Digital network visualisation">
       <div className="orbit-ring ring-a"/><div className="orbit-ring ring-b"/><div className="orbit-ring ring-c"/>
       <div className="orbit-node node-a"/><div className="orbit-node node-b"/><div className="orbit-node node-c"/>
-      <div className="core-node"><ShieldCheck size={44}/><span>SECURE<br/>BY DESIGN</span></div>
+      <div className="core-node">{profile.profilePhoto?<img src={profile.profilePhoto} alt={`Portrait of ${profile.fullName}`} className="size-full rounded-full object-cover"/>:<ShieldCheck size={44}/>}<span className="core-label">SECURE<br/>BY DESIGN</span></div>
       <div className="data-chip chip-a"><Terminal size={15}/> ROUTEROS</div><div className="data-chip chip-b"><Binary size={15}/> 0101</div>
     </motion.div>
    </div>
