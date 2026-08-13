@@ -28,8 +28,9 @@ export default function Home() {
     <motion.div initial={{opacity:0,scale:.94}} animate={{opacity:1,scale:1}} transition={{delay:.15}} className="network-orbit mx-auto" aria-label="Digital network visualisation">
       <div className="orbit-ring ring-a"/><div className="orbit-ring ring-b"/><div className="orbit-ring ring-c"/>
       <div className="orbit-node node-a"/><div className="orbit-node node-b"/><div className="orbit-node node-c"/>
-      <div className="core-node home-profile-node">{profile.profilePhoto?<img src={profile.profilePhoto} alt={`Portrait of ${profile.fullName}`} className="size-full rounded-full object-cover object-top"/>:<ShieldCheck size={44}/>}<span className="core-label">SECURE<br/>BY DESIGN</span></div>
+      <div className="core-node"><ShieldCheck size={44}/><span className="core-label">SECURE<br/>BY DESIGN</span></div>
       <div className="data-chip chip-a"><Terminal size={15}/> ROUTEROS</div><div className="data-chip chip-b"><Binary size={15}/> 0101</div>
+      <motion.div initial={{opacity:0,x:22,y:12}} animate={{opacity:1,x:0,y:0}} transition={{delay:.4}} className="hero-profile-card"><div className="hero-profile-image">{profile.profilePhoto?<img src={profile.profilePhoto} alt={`Portrait of ${profile.fullName}`}/>:<ShieldCheck size={46}/>}</div><div><p className="text-[10px] font-bold tracking-[.16em] text-brand">IT / CYBERSECURITY</p><p className="mt-1 text-sm font-semibold text-white">MD ABDUL LOTIF</p><p className="mt-1 text-xs text-slate-300">Building secure systems</p></div><span className="hero-profile-dot"/></motion.div>
     </motion.div>
    </div>
   </section>
