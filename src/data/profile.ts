@@ -8,7 +8,7 @@ export const profile = {
   availability: "Open to opportunities",
   preferredJobType: "IT, networking & cybersecurity roles",
   preferredWorkMode: "On-site, hybrid or remote",
-  profilePhoto: "https://drive.usercontent.google.com/download?id=1vy1xj_nehB-d0-6Cu0W-aPsQiv2ogP4d&export=view&authuser=0",
+  profilePhoto: "/images/abdul-lotif-profile.jpg",
   resumeUrl: "/documents/abdul-lotif-cv.pdf",
   roles: ["IT Support Professional", "Network & System Administrator", "Cybersecurity Practitioner", "Web Security Researcher", "Vulnerability Assessment Practitioner", "CCTV Infrastructure Technician"],
   summary: "CSE graduate with hands-on IT support, Windows administration, workstation deployment, networking, CCTV infrastructure, virtualisation, and security-aware IT operations. I currently contribute to the technical setup of the Illustromer Cybersecurity Research Lab.",

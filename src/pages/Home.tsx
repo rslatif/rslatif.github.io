@@ -23,7 +23,7 @@ export default function Home() {
      <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[.94] tracking-[-.065em] sm:text-7xl lg:text-8xl">Secure the<br/><span className="cyber-gradient">connection.</span></h1>
      <p className="mt-7 max-w-xl text-lg leading-8 text-muted">I’m <strong className="text-foreground">{profile.fullName}</strong> — an IT & cybersecurity professional building dependable systems and learning security from the network outward.</p>
      <div className="mt-9 flex flex-wrap gap-3"><Link to="/projects" className="cyber-button">Explore my work <ArrowUpRight size={18}/></Link><Link to="/contact" className="cyber-button-secondary">Let’s connect</Link></div>
-     <a href="#capabilities" className="mt-14 inline-flex items-center gap-2 text-xs font-semibold tracking-[.16em] text-muted hover:text-brand">SCROLL TO EXPLORE <ArrowDown size={16}/></a>
+     <button onClick={()=>document.getElementById("capabilities")?.scrollIntoView({behavior:"smooth"})} className="mt-14 inline-flex items-center gap-2 text-xs font-semibold tracking-[.16em] text-muted hover:text-brand">SCROLL TO EXPLORE <ArrowDown size={16}/></button>
     </div>
     <motion.div initial={{opacity:0,scale:.94}} animate={{opacity:1,scale:1}} transition={{delay:.15}} className="network-orbit mx-auto" aria-label="Digital network visualisation">
       <div className="orbit-ring ring-a"/><div className="orbit-ring ring-b"/><div className="orbit-ring ring-c"/>

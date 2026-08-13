@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { contactSchema, type ContactFormValues } from "@/schemas/contact";
+import { contact } from "@/data/contact";
 
 const timestamp=()=>Date.now();
 const isoTimestamp=()=>new Date().toISOString();
@@ -12,7 +13,11 @@ export function ContactForm(){
  async function submit(values:ContactFormValues){
   if(values.website)return; if(lastSent&&timestamp()-lastSent<60_000){setNotice({ok:false,text:"Please wait before sending another message."});return}
   const service=import.meta.env.VITE_EMAILJS_SERVICE_ID; const template=import.meta.env.VITE_EMAILJS_TEMPLATE_ID; const key=import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  if(!service||!template||!key){setNotice({ok:false,text:"The contact form is not configured yet. Please use an available direct contact link."});return}
+  if(!service||!template||!key){
+   const body=`Name: ${values.from_name}\nEmail: ${values.from_email}\nCompany: ${values.company || "Not provided"}\nEnquiry: ${values.enquiry_type}\n\n${values.message}`;
+   window.location.href=`mailto:${contact.email}?subject=${encodeURIComponent(values.subject)}&body=${encodeURIComponent(body)}`;
+   setLastSent(timestamp()); form.reset(); setNotice({ok:true,text:"Your email app has been opened with the message ready to send."}); return;
+  }
   setNotice(null);
   try{await emailjs.send(service,template,{...values,to_name:import.meta.env.VITE_CONTACT_RECEIVER_NAME,page_url:location.href,submission_time:isoTimestamp()},key);setLastSent(timestamp());form.reset();setNotice({ok:true,text:"Thanks. Your message was sent successfully."})}
   catch{setNotice({ok:false,text:"The message could not be sent. Please try again later."})}
