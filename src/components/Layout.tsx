@@ -7,7 +7,7 @@ import { siteSettings } from "@/data/siteSettings";
 
 export function Layout() {
   const [menu, setMenu] = useState(false);
-  const [dark, setDark] = useState(() => (localStorage.getItem("theme") ?? siteSettings.defaultTheme) === "dark");
+  const [dark, setDark] = useState(true);
   const [progress, setProgress] = useState(0);
   const location = useLocation();
   useEffect(() => {
